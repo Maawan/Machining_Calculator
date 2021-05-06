@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="40dp"
+        android:elevation="10dp"
+        app:cardElevation="10dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:id="@+id/valueIndicator">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_margin="30dp"
+            android:layout_gravity="center"
+
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:text="Time in Cut (Tc)"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="s"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:textColor="#00897B"
+                android:id="@+id/finalValue"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:textSize="90sp"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_height="70dp"
+        android:layout_width="match_parent"
+        android:id="@+id/lengthOfCutLayout"
+        android:layout_below="@+id/valueIndicator"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:hint="Length of cut (lm) [mm]"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:id="@+id/lengthOfCutEditText"
+            android:inputType="numberDecimal"
+            android:layout_height="70dp"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/linearLayout"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/lengthOfCutLayout"
+        android:orientation="horizontal">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="10"
+            android:hint="Table feed (vf) [mm/min]"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:id="@+id/tableFeedEditText"
+                android:inputType="numberDecimal"
+                android:layout_height="70dp"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <ImageView
+            android:layout_width="0dp"
+            android:id="@+id/dropDownImage"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_baseline_arrow_drop_down_24"/>
+
+    </LinearLayout>
+    <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:layout_below="@+id/linearLayout"
+        android:id="@+id/expandableView1">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_height="60dp"
+            android:layout_width="match_parent"
+            android:id="@+id/layout1"
+            android:layout_below="@+id/feedPerToothLayout"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:hint="Feed per Tooth (fz) [mm]"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:id="@+id/feedPerToothEditText"
+                android:inputType="numberDecimal"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_height="60dp"
+            android:layout_width="match_parent"
+            android:id="@+id/layout2"
+            android:layout_below="@+id/layout1"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:hint="Spindle Speed (n) [rpm]"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:id="@+id/spindleSpeedEditText"
+                android:inputType="numberDecimal"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_height="60dp"
+            android:layout_width="match_parent"
+            android:id="@+id/layout3"
+            android:layout_below="@+id/layout2"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:hint="Number of Inserts (zc) [pcs]"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:id="@+id/numberOfInsertsEditText"
+                android:inputType="numberDecimal"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+</RelativeLayout>
+</ScrollView>

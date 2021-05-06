@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.waqazystudios.machiningcalculator">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logonewsplash"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logonewsplash"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MachiningCalculator">
+        <activity android:name="com.waqazystudios.machiningcalculator.Activities.PrivacyPolicy"
+            android:parentActivityName="com.waqazystudios.machiningcalculator.MainActivity"/>
+        <activity
+            android:name="com.waqazystudios.machiningcalculator.Activities.HistoryActivity"
+            android:parentActivityName="com.waqazystudios.machiningcalculator.MainActivity" />
+        <activity
+            android:name="com.waqazystudios.machiningcalculator.Activities.AboutTheApp"
+            android:parentActivityName="com.waqazystudios.machiningcalculator.MainActivity" />
+        <activity
+            android:name="com.waqazystudios.machiningcalculator.Activities.millingCalculationActivity"
+            android:parentActivityName="com.waqazystudios.machiningcalculator.MainActivity" />
+        <activity
+            android:name="com.waqazystudios.machiningcalculator.Activities.calculationActivity"
+            android:parentActivityName="com.waqazystudios.machiningcalculator.MainActivity" />
+        <activity
+            android:name="com.waqazystudios.machiningcalculator.Activities.Settings"
+            android:parentActivityName="com.waqazystudios.machiningcalculator.MainActivity" />
+        <activity
+            android:name="com.waqazystudios.machiningcalculator.Activities.equationSelector"
+            android:parentActivityName="com.waqazystudios.machiningcalculator.MainActivity" />
+        <activity android:name="com.waqazystudios.machiningcalculator.Activities.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.waqazystudios.machiningcalculator.MainActivity" />
+    </application>
+
+</manifest>

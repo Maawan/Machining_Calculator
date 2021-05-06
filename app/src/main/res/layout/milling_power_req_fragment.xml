@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="40dp"
+        android:elevation="10dp"
+        app:cardElevation="10dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:id="@+id/valueIndicator">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_margin="30dp"
+            android:layout_gravity="center"
+
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:text="Power Requirement (Pc)"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/unitsTextView"
+                android:text="kW"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:textColor="#00897B"
+                android:id="@+id/finalValue"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:textSize="90sp"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/valueIndicator"
+
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:id="@+id/linearLayout"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/valueIndicator"
+            android:orientation="horizontal">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="10"
+                android:hint="Metal Removal Rate (Q) [cm3/min]"
+                >
+                <EditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/metalRemovalEditText"
+                    android:inputType="numberDecimal"
+                    android:layout_height="70dp"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <ImageView
+                android:layout_width="0dp"
+                android:id="@+id/dropDownImage"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_baseline_arrow_drop_down_24"/>
+
+        </LinearLayout>
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_margin="20dp"
+            android:layout_below="@+id/linearLayout"
+            android:id="@+id/expandableView">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_height="50dp"
+                    android:layout_width="match_parent"
+                    android:id="@+id/cutterDiameterLayout"
+                    android:layout_below="@+id/cutterPositionLayout"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="60dp"
+                    android:hint="Table Feed (vf) [mm/min]"
+                    >
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:id="@+id/tableFeedEditText"
+                        android:inputType="numberDecimal"
+                        android:layout_height="50dp"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_height="50dp"
+                    android:layout_width="match_parent"
+                    android:id="@+id/tableFeedEditLayout"
+                    android:layout_below="@+id/cutterPositionLayout"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="60dp"
+                    android:hint="Axial Depth of Cut (ap) [mm]"
+                    >
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:id="@+id/axialDepthEditText"
+                        android:inputType="numberDecimal"
+                        android:layout_height="50dp"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_height="50dp"
+                    android:layout_width="match_parent"
+
+                    android:layout_below="@+id/cutterPositionLayout"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="60dp"
+                    android:hint="Radial width of cut (ae) [mm]"
+                    >
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:id="@+id/radialWidthOfCutEditText"
+                        android:inputType="numberDecimal"
+                        android:layout_height="50dp"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+
+            android:layout_marginLeft="20dp"
+            android:id="@+id/leadAngleLayout"
+            android:layout_below="@+id/cuterDiameterLayout"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#00897B"
+                android:text="Rake Angle"/>
+            <Spinner
+                android:layout_width="150dp"
+                android:id="@+id/rakeAngleSpinner"
+                android:layout_marginLeft="20dp"
+                android:layout_height="60dp"/>
+        </LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/radialWidthCutLayout"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="Specific Cutting force (kc) [N/mm2]"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:id="@+id/specificCuttingForceEditText"
+                android:inputType="numberDecimal"
+                android:layout_height="50dp"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+</RelativeLayout>
+</ScrollView>

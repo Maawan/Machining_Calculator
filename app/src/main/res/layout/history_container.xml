@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:focusable="true"
+        android:clickable="true"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:id="@+id/deletebtn"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_baseline_delete_24"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text = "Machined Diameter"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="40dp"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/valueNameTextView"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                tools:text="89"
+                android:textColor="#FF018786"
+                android:layout_marginLeft="10dp"
+                android:textSize="35sp"
+                android:layout_marginRight="5dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/valueTextView"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="ft/inch"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/valueUnitsTextView" />
+
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="40dp"
+        android:elevation="10dp"
+        app:cardElevation="10dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:id="@+id/valueIndicator">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_margin="30dp"
+            android:layout_gravity="center"
+
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:text="Cutting Speed (Vc)"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/unitsTextView"
+                android:text="m / min"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:textColor="#00897B"
+                android:id="@+id/finalValue"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:textSize="60sp"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_height="70dp"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="40dp"
+            android:id="@+id/cuterDiameterLayout"
+            android:layout_below="@+id/valueIndicator"
+            android:hint="Cutter Diameter (Dc) [mm]"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:id="@+id/cutterDiameterEditText"
+                android:inputType="numberDecimal"
+                android:layout_height="70dp"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/leadAngleLayout"
+        android:layout_below="@+id/cuterDiameterLayout"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="#00897B"
+            android:text="Insert Approach Angle"/>
+        <Spinner
+            android:layout_width="150dp"
+            android:id="@+id/approachAngleSpinner"
+            android:layout_marginLeft="20dp"
+            android:layout_height="60dp"/>
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/leadAngleLayout"
+        android:layout_width="match_parent"
+        android:hint="Spindle Speed (n) [rpm]"
+        android:id="@+id/spindleSpeedLayout">
+        <EditText
+            android:layout_width="match_parent"
+            android:id="@+id/spindleSpeedEditText"
+            android:layout_marginRight="70dp"
+            android:inputType="numberDecimal"
+            android:layout_height="70dp"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+</RelativeLayout>
+</ScrollView>

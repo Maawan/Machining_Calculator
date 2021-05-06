@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="Settings"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/rateUs"
+        android:title="Rate us"/>
+    <item
+        android:id="@+id/shareApp"
+        android:title="Share to Friends"/>
+    <item
+        android:id="@+id/aboutTheApp"
+        android:title="About the App"
+        />
+    <item
+        android:id="@+id/contactUs"
+        android:title="Contact Us"
+        />
+    <item
+        android:id="@+id/privacyPolicy"
+        android:title="Privacy Policy"
+        />
+
+    <!-- Settings, should always be in the overflow -->
+
+</menu>
