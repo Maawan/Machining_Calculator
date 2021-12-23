@@ -18,6 +18,9 @@ import androidx.fragment.app.Fragment;
 
 import com.fxn.stash.Stash;
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.waqazystudios.machiningcalculator.Models.DataBase_data;
 import com.waqazystudios.machiningcalculator.R;
 import com.waqazystudios.machiningcalculator.Utlis.Math;
@@ -31,6 +34,7 @@ public class metalRemovalFragment extends Fragment {
     private EditText cuttingSpeedEditText, machinedDiameterEditText, spindleSpeedEditText, feedPerRevolutionEditText, depthofCutEditText;
     private ImageView dropDownImage;
     private TextView finalValue;
+    private AdView adView;
     private float cuttingSpeedValue, machinedDiameterValue, spindleSpeedValue, feedPerRevolutionValue, depthOfCutValue,q;
     private ExpandableRelativeLayout expandableRelativeLayout;
     public metalRemovalFragment(){}
@@ -38,6 +42,15 @@ public class metalRemovalFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.metal_removal_fragment,container,false);
+        adView = rootView.findViewById(R.id.adView);
+        adView.loadAd(new AdRequest.Builder().build());
+        adView.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+                adView.setVisibility(View.VISIBLE);
+            }
+        });
         cuttingSpeedEditText = rootView.findViewById(R.id.cuttingSpeedEditText);
         machinedDiameterEditText = rootView.findViewById(R.id.diameterEditText);
         spindleSpeedEditText = rootView.findViewById(R.id.spindleEditText);

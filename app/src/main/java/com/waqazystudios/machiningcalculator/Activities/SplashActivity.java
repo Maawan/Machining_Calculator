@@ -12,6 +12,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
 
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.waqazystudios.machiningcalculator.MainActivity;
 import com.waqazystudios.machiningcalculator.R;
 
@@ -23,6 +26,12 @@ public class SplashActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_splash);
         getSupportActionBar().hide();
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+
+            }
+        });
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

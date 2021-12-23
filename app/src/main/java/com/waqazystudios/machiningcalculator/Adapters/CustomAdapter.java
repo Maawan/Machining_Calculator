@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 
 import com.waqazystudios.machiningcalculator.Activities.calculationActivity;
+import com.waqazystudios.machiningcalculator.InteristialClick;
 import com.waqazystudios.machiningcalculator.Models.Data;
 import com.waqazystudios.machiningcalculator.R;
 
@@ -22,11 +23,13 @@ import java.util.ArrayList;
 public class CustomAdapter extends ArrayAdapter<Data> {
     private Context ctx;
     private ArrayList<Data> list;
+    private InteristialClick listener;
 
-    public CustomAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Data> objects) {
+    public CustomAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Data> objects , InteristialClick click) {
 
         super(context, resource, objects);
         this.ctx = context;
+        this.listener = click;
         list = objects;
 
     }
@@ -45,6 +48,7 @@ public class CustomAdapter extends ArrayAdapter<Data> {
             @Override
             public void onClick(View view) {
                 ctx.startActivity(new Intent(ctx, calculationActivity.class).putExtra("Position",position));
+                listener.clicked();
             }
         });
 

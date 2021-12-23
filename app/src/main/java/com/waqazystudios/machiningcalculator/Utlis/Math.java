@@ -20,6 +20,7 @@ public class Math {
     public static final String timeInCut = "TIME IN CUT";
     public static final String powerRequirement = "POWER REQUIREMENT (Pc)";
     public static final String historyData = "HISTORY DATA";
+    public static int adCount = 0;
 
     public Math(){
 

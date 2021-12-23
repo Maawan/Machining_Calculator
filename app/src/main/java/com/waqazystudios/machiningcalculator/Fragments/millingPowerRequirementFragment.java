@@ -17,6 +17,9 @@ import androidx.fragment.app.Fragment;
 
 import com.fxn.stash.Stash;
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.waqazystudios.machiningcalculator.Models.DataBase_data;
 import com.waqazystudios.machiningcalculator.R;
 import com.waqazystudios.machiningcalculator.Utlis.Math;
@@ -29,6 +32,7 @@ import static com.waqazystudios.machiningcalculator.MainActivity.variableValues;
 public class millingPowerRequirementFragment extends Fragment {
     private ImageView dropDownImage;
     private TextView finalValue;
+    private AdView adView;
     private ExpandableRelativeLayout expandableRelativeLayout;
     private EditText metalRemovalRateEditText , tableFeedEditText, axialDepthEditText,radialWidthEditText,specificCuttingForceEditText;
     private float metalRemovalRateValue = 0 , tableFeedValue = 0 , axialDepthValue = 0 , radialWidthValue = 0 , specificCuttingValue = 0 , Pc = 0;
@@ -37,6 +41,15 @@ public class millingPowerRequirementFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.milling_power_req_fragment,container,false);
         metalRemovalRateEditText = rootView.findViewById(R.id.metalRemovalEditText);
+        adView = rootView.findViewById(R.id.adView);
+        adView.loadAd(new AdRequest.Builder().build());
+        adView.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+                adView.setVisibility(View.VISIBLE);
+            }
+        });
         tableFeedEditText = rootView.findViewById(R.id.tableFeedEditText);
         finalValue = rootView.findViewById(R.id.finalValue);
         if(!isMetericSelected){

@@ -17,6 +17,9 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.fxn.stash.Stash;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.waqazystudios.machiningcalculator.Models.DataBase_data;
 import com.waqazystudios.machiningcalculator.R;
 import com.waqazystudios.machiningcalculator.Utlis.Math;
@@ -35,6 +38,7 @@ public class cuttingSpeedFragment extends Fragment {
     private CardView valueIndicator;
     private Boolean isMetric = true;
     float diameterValue = 0,spindleValue = 0;
+    private AdView adView;
     public cuttingSpeedFragment(){}
 
     @Override
@@ -49,6 +53,15 @@ public class cuttingSpeedFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.cuttingspeed_fragment,container,false);
         diameter = rootView.findViewById(R.id.diameter);
+        adView = rootView.findViewById(R.id.adView);
+        adView.loadAd(new AdRequest.Builder().build());
+        adView.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+                adView.setVisibility(View.VISIBLE);
+            }
+        });
         if(isMetericSelected){
 
         }else {

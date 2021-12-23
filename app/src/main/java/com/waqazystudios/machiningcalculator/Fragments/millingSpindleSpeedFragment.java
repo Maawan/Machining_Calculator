@@ -16,6 +16,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.fxn.stash.Stash;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.waqazystudios.machiningcalculator.Models.DataBase_data;
 import com.waqazystudios.machiningcalculator.R;
 import com.waqazystudios.machiningcalculator.Utlis.Math;
@@ -30,11 +33,21 @@ public class millingSpindleSpeedFragment extends Fragment {
     private TextView finalValue;
     private EditText cutterDiameterEditText, cuttingSpeedEditText,axialDepthOfCutEditText;
     private Spinner approachAngle;
+    private AdView adView;
     private float cuttingSpeedValue = 0,cutterDiameterValue = 0, spindleSpeedValue = 0,axialDepthValue = 0;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.milling_spindle_speed_fragment,container,false);
+        adView = rootView.findViewById(R.id.adView);
+        adView.loadAd(new AdRequest.Builder().build());
+        adView.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+                adView.setVisibility(View.VISIBLE);
+            }
+        });
         finalValue = rootView.findViewById(R.id.finalValue);
         cutterDiameterEditText = rootView.findViewById(R.id.cutterDiameterEditText);
         cuttingSpeedEditText = rootView.findViewById(R.id.cuttingSpeedEditText);

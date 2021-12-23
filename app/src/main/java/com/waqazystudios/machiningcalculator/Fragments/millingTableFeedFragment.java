@@ -19,6 +19,9 @@ import androidx.fragment.app.Fragment;
 
 import com.fxn.stash.Stash;
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.waqazystudios.machiningcalculator.Models.DataBase_data;
 import com.waqazystudios.machiningcalculator.R;
 import com.waqazystudios.machiningcalculator.Utlis.Math;
@@ -36,6 +39,7 @@ public class millingTableFeedFragment extends Fragment {
     private ImageView dropDownImage;
     private Spinner cutterPositionSpinner;
     private float axialDepthOfCutValue = 0;
+    private AdView adView;
     private ExpandableRelativeLayout expandableRelativeLayout;
     private EditText spindleSpeedEditText,axialDepthEditText ,cutterDiameterEditText,cuttingSpeedEditText,feedPerToothEditText,numberOfInsertsEditText;
     private float spindleSpeedValue = 0 , cutterDiameterValue  = 0 , cuttingSpeedValue = 0, feedPerToothValue = 0 , numberOfInsertsValue = 0,tableFeedValue = 0;
@@ -73,6 +77,15 @@ public class millingTableFeedFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.milling_table_feed_fragment,container,false);
         expandableRelativeLayout = rootView.findViewById(R.id.expandableView);
+        adView = rootView.findViewById(R.id.adView);
+        adView.loadAd(new AdRequest.Builder().build());
+        adView.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+                adView.setVisibility(View.VISIBLE);
+            }
+        });
         cutterPositionSpinner = rootView.findViewById(R.id.cutterPositionSpinner);
         approachAngleSpinner = rootView.findViewById(R.id.approachAngleSpinner);
         list = new ArrayList<String>();

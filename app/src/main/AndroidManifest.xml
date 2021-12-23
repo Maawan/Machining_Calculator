@@ -40,6 +40,9 @@
             </intent-filter>
         </activity>
         <activity android:name="com.waqazystudios.machiningcalculator.MainActivity" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-6363314413665236~4025228152"/>
     </application>
 
 </manifest>
