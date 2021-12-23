@@ -20,6 +20,9 @@ import androidx.fragment.app.Fragment;
 
 import com.fxn.stash.Stash;
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.waqazystudios.machiningcalculator.Models.DataBase_data;
 import com.waqazystudios.machiningcalculator.R;
 import com.waqazystudios.machiningcalculator.Utlis.Math;
@@ -36,6 +39,7 @@ public class powerRequirementFragment extends Fragment {
     private TextView finalValue;
     private ArrayList<Integer> leadAngle,rakeAngle;
     private Spinner leadAngleSpinner,rakeAngleSpinner;
+    private AdView adView;
     private ExpandableRelativeLayout expandableRelativeLayout;
     private EditText metalRemovalEditText, cuttingSpeedEditText, feedPerRevolutionEditText,depthOfCutEditText,specificCuttingForceEditText;
     private float Pc = 0,metalRemovalValue = 0, cuttingSpeedValue = 0, feedPerRevolutionValue = 0, depthOfCutValue = 0,specificCuttingValue = 0;
@@ -43,6 +47,15 @@ public class powerRequirementFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.power_requirement_fragment,container,false);
+        adView = rootView.findViewById(R.id.adView);
+        adView.loadAd(new AdRequest.Builder().build());
+        adView.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+                adView.setVisibility(View.VISIBLE);
+            }
+        });
         expandableRelativeLayout = rootView.findViewById(R.id.expandableView);
         imageToggle = rootView.findViewById(R.id.dropDownImage);
         finalValue = rootView.findViewById(R.id.finalValue);

@@ -11,12 +11,16 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.waqazystudios.machiningcalculator.R;
 
 public class PrivacyPolicy extends AppCompatActivity {
     private static final String URL = "https://www.waqazystudios.com/privacy-policy/";
     private WebView webView;
     private ProgressBar progressBar;
+    private AdView adView;
     Button retry;
     RelativeLayout noConnection, webViewLayout;
 
@@ -24,6 +28,15 @@ public class PrivacyPolicy extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_privacy_policy);
+        adView = findViewById(R.id.adView);
+        adView.loadAd(new AdRequest.Builder().build());
+        adView.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+                adView.setVisibility(View.VISIBLE);
+            }
+        });
         setTitle("Privacy Policy");
         webView = findViewById(R.id.webView);
         webViewLayout = findViewById(R.id.webViewLayout);

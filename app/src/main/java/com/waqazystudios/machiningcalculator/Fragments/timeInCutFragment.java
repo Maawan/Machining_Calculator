@@ -16,6 +16,9 @@ import androidx.fragment.app.Fragment;
 
 import com.fxn.stash.Stash;
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.waqazystudios.machiningcalculator.Models.DataBase_data;
 import com.waqazystudios.machiningcalculator.R;
 import com.waqazystudios.machiningcalculator.Utlis.Math;
@@ -31,6 +34,7 @@ public class timeInCutFragment extends Fragment {
     private ExpandableRelativeLayout expandableRelativeLayout;
     private EditText startDiameterEditText, machinedDiameterEditText,cuttingSpeedEditText,spindleSpeedEditText,depthOfCutEditText,lengthOfCutEditText,feedPerRevolutionEditText;
     private ImageView imageView;
+    private AdView adView;
     private TextView finalValue;
     private float sec =0, startDiameterValue =0, machinedDiameterValue=0 , cuttingSpeedValue=0 , spindleSpeedValue =0, depthOfCutValue =0, lengthOfCutValue=0 , feedPerRevolutionValue=0;
     @Nullable
@@ -40,7 +44,15 @@ public class timeInCutFragment extends Fragment {
         expandableRelativeLayout = rootView.findViewById(R.id.expandableView);
         imageView = rootView.findViewById(R.id.dropDownImage);
         finalValue = rootView.findViewById(R.id.finalValue);
-
+        adView = rootView.findViewById(R.id.adView);
+        adView.loadAd(new AdRequest.Builder().build());
+        adView.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+                adView.setVisibility(View.VISIBLE);
+            }
+        });
         startDiameterEditText = rootView.findViewById(R.id.startDiameterEditText);
         machinedDiameterEditText = rootView.findViewById(R.id.machinedDiameterEditText);
         cuttingSpeedEditText = rootView.findViewById(R.id.cuttingSpeedEditText);

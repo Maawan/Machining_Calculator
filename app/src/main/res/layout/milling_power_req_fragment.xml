@@ -57,6 +57,7 @@
         android:layout_alignParentBottom="false"
         android:layout_below="@+id/valueIndicator"
         ads:adSize="BANNER"
+        android:layout_marginTop="10dp"
         android:visibility="gone"
         ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
     </com.google.android.gms.ads.AdView>

@@ -31,7 +31,7 @@ public class equationSelector extends AppCompatActivity implements InteristialCl
         listView = findViewById(R.id.listView);
         adView = findViewById(R.id.adView);
         interstitialAd = new InterstitialAd(this);
-        interstitialAd.setAdUnitId("ca-app-pub-6363314413665236/3258941394");
+        interstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
         interstitialAd.loadAd(new AdRequest.Builder().build());
         adView.loadAd(new AdRequest.Builder().build());
         Bundle bundle = getIntent().getExtras();

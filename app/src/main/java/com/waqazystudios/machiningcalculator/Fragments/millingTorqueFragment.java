@@ -16,6 +16,9 @@ import androidx.fragment.app.Fragment;
 
 import com.fxn.stash.Stash;
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.waqazystudios.machiningcalculator.Models.DataBase_data;
 import com.waqazystudios.machiningcalculator.R;
 import com.waqazystudios.machiningcalculator.Utlis.Math;
@@ -28,6 +31,7 @@ import static com.waqazystudios.machiningcalculator.MainActivity.variableValues;
 public class millingTorqueFragment extends Fragment {
     private ImageView dropDown, dropDown1;
     private TextView finalValue;
+    private AdView adView;
     private EditText powerRequirementEditText , metalRemovalRateEditText , specificCuttingForceEditText , spindleSpeedEditText , cutterDiameterEditText , cuttingSpeedEditText;
     private ExpandableRelativeLayout layout1, layout2;
     private float Mc = 0,Pc = 0 , metalRemovalRateValue = 0 , specificCuttingValue = 0, spindleSpeedValue = 0 , cutterDiameterValue = 0 , cuttingSpeedValue = 0 ;
@@ -35,6 +39,15 @@ public class millingTorqueFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.milling_torque_fragment,container,false);
+        adView = rootView.findViewById(R.id.adView);
+        adView.loadAd(new AdRequest.Builder().build());
+        adView.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+                adView.setVisibility(View.VISIBLE);
+            }
+        });
         dropDown = rootView.findViewById(R.id.dropDownImage);
         dropDown1 = rootView.findViewById(R.id.dropDownImage1);
         layout1 = rootView.findViewById(R.id.expandableView);

@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/Maawan Ahmad/StudioProjects/Machining_Calculator3/app/src/main/res/layout/activity_equation_selector.xml" value="0.10144927536231885" />
         <entry key="..\:/Users/Maawan Ahmad/StudioProjects/Machining_Calculator3/app/src/main/res/layout/activity_milling_calculation.xml" value="0.15081521739130435" />
+        <entry key="..\:/Users/Maawan Ahmad/StudioProjects/Machining_Calculator3/app/src/main/res/layout/activity_privacy_policy.xml" value="0.13645833333333332" />
         <entry key="..\:/Users/Maawan Ahmad/StudioProjects/Machining_Calculator3/app/src/main/res/layout/cuttingspeed_fragment.xml" value="0.21" />
         <entry key="..\:/Users/Maawan Ahmad/StudioProjects/Machining_Calculator3/app/src/main/res/layout/metal_removal_fragment.xml" value="0.13645833333333332" />
         <entry key="..\:/Users/Maawan Ahmad/StudioProjects/Machining_Calculator3/app/src/main/res/layout/miiling_time_in_cut_fragment.xml" value="0.13645833333333332" />
@@ -13,6 +14,12 @@
         <entry key="..\:/Users/Maawan Ahmad/StudioProjects/Machining_Calculator3/app/src/main/res/layout/milling_power_req_fragment.xml" value="0.13645833333333332" />
         <entry key="..\:/Users/Maawan Ahmad/StudioProjects/Machining_Calculator3/app/src/main/res/layout/milling_spindle_speed_fragment.xml" value="0.13645833333333332" />
         <entry key="..\:/Users/Maawan Ahmad/StudioProjects/Machining_Calculator3/app/src/main/res/layout/milling_table_feed_fragment.xml" value="0.21" />
+        <entry key="..\:/Users/Maawan Ahmad/StudioProjects/Machining_Calculator3/app/src/main/res/layout/milling_torque_fragment.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Maawan Ahmad/StudioProjects/Machining_Calculator3/app/src/main/res/layout/milling_total_cycle_time.xml" value="0.13645833333333332" />
+        <entry key="..\:/Users/Maawan Ahmad/StudioProjects/Machining_Calculator3/app/src/main/res/layout/power_requirement_fragment.xml" value="0.13645833333333332" />
+        <entry key="..\:/Users/Maawan Ahmad/StudioProjects/Machining_Calculator3/app/src/main/res/layout/selector_layout.xml" value="0.13645833333333332" />
+        <entry key="..\:/Users/Maawan Ahmad/StudioProjects/Machining_Calculator3/app/src/main/res/layout/spindle_speed_fragment.xml" value="0.13645833333333332" />
+        <entry key="..\:/Users/Maawan Ahmad/StudioProjects/Machining_Calculator3/app/src/main/res/layout/time_in_cut_fragment.xml" value="0.11096014492753623" />
       </map>
     </option>
   </component>

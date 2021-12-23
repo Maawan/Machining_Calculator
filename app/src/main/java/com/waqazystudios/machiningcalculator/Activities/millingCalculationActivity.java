@@ -29,7 +29,7 @@ public class millingCalculationActivity extends AppCompatActivity implements Int
         setContentView(R.layout.activity_milling_calculation);
         listView = findViewById(R.id.listView);
         interstitialAd = new InterstitialAd(this);
-        interstitialAd.setAdUnitId("");
+        interstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
         interstitialAd.loadAd(new AdRequest.Builder().build());
         listView.setDivider(null);
         adView = findViewById(R.id.adView);

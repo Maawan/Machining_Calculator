@@ -16,6 +16,9 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.fxn.stash.Stash;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.waqazystudios.machiningcalculator.Models.DataBase_data;
 import com.waqazystudios.machiningcalculator.R;
 import com.waqazystudios.machiningcalculator.Utlis.Math;
@@ -29,6 +32,7 @@ public class spindleSpeedFragment extends Fragment {
     private EditText diameter,cuttingSpeed;
     private TextView finalValue;
     private CardView valueIndicator;
+    private AdView adView;
     float diameterValue = 0,cuttingSpeedValue = 0;
     public spindleSpeedFragment(){}
     @Nullable
@@ -36,6 +40,15 @@ public class spindleSpeedFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.spindle_speed_fragment,container,false);
         diameter = rootView.findViewById(R.id.diameter);
+        adView = rootView.findViewById(R.id.adView);
+        adView.loadAd(new AdRequest.Builder().build());
+        adView.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+                adView.setVisibility(View.VISIBLE);
+            }
+        });
         cuttingSpeed = rootView.findViewById(R.id.cuttingSpeed);
         finalValue = rootView.findViewById(R.id.finalValue);
         valueIndicator =rootView.findViewById(R.id.valueIndicator);
